@@ -4,9 +4,6 @@ import matplotlib.pyplot as plt
 import matplotlib
 
 
-#avail_font_names = [f.name for f in matplotlib.font_manager.fontManager.ttflist]
-#print(avail_font_names)
-
 
 jobs=pd.read_csv('NikiData.csv')
 #print(jobs.head())
@@ -14,13 +11,11 @@ jobs=pd.read_csv('NikiData.csv')
 
 jobs['Nikola']='Nikola'
 G1=nx.from_pandas_edgelist(jobs, 'Experiences','Skills')
-#G1.add_edge('Nikola', 'Physics Studies')
 G1.add_edge('Nikola', 'PhD Physics')
 G1.add_edge('Nikola', 'MAN')
 G1.add_edge('Nikola', 'LabPeers')
 G1.add_edge('Nikola', 'Certificates')
 pos = nx.kamada_kawai_layout(G1)
-#pos = nx.spring_layout(G1)
 mysize=jobs['YearsE']+jobs['YearsS']
 
     
